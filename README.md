@@ -235,6 +235,7 @@ LiDAR Configurations (such as ip, port, data type... etc.) can be set via a json
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
       "blind_spot_set" : 50,
+      "frame_id" : "osx_sensor",
       "extrinsic_parameter" : {
         "roll": 0.0,
         "pitch": 0.0,
@@ -317,6 +318,7 @@ For more infomation about the HAP config, please refer to:
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
       "blind_spot_set" : 50,
+      "frame_id" : "osx_sensor",
       "extrinsic_parameter" : {
         "roll": 0.0,
         "pitch": 0.0,
@@ -375,6 +377,7 @@ For more infomation about the HAP config, please refer to:
             "ip": "192.168.1.100", # ip of the LiDAR you want to config
             "pcl_data_type": 1,
             "pattern_mode": 0,
+            "frame_id" : "osx_sensor",
             "extrinsic_parameter": {
                 "roll": 0.0,
                 "pitch": 0.0,
@@ -418,6 +421,7 @@ For more infomation about the HAP config, please refer to:
             "ip": "192.168.2.100", # ip of the LiDAR you want to config
             "pcl_data_type": 1,
             "pattern_mode": 0,
+             "frame_id" : "os2_sensor",
             "extrinsic_parameter": {
                 "roll": 0.0,
                 "pitch": 0.0,
