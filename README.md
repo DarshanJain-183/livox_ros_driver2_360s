@@ -10,43 +10,32 @@ Livox ROS Driver 2 is the 2nd-generation driver package used to connect LiDAR pr
 
 ### 1.1 OS requirements
 
-  * Ubuntu 18.04 for ROS Melodic;
+  
   * Ubuntu 20.04 for ROS Noetic and ROS2 Foxy;
-  * Ubuntu 22.04 for ROS2 Humble;
-  * Ubuntu 24.04 for ROS 2 Jazzy;
+ 
 
   **Tips:**
 
-  Colcon is a build tool used in ROS2.
+ 
 
-  How to install colcon: [Colcon installation instructions](https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Colcon-Tutorial.html)
+### 1.2 Install ROS 
 
-### 1.2 Install ROS & ROS2
-
-For ROS Melodic installation, please refer to:
-[ROS Melodic installation instructions](https://wiki.ros.org/melodic/Installation)
 
 For ROS Noetic installation, please refer to:
 [ROS Noetic installation instructions](https://wiki.ros.org/noetic/Installation)
 
-For ROS2 Foxy installation, please refer to:
-[ROS Foxy installation instructions](https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html)
-
-For ROS2 Humble installation, please refer to:
-[ROS Humble installation instructions](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
-
-For ROS2 Jazzy installation, please refer to:
-[ROS Jazzy installation instructions](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debians.html)
-
 
 Desktop-Full installation is recommend.
 
-## 2. Build & Run Livox ROS Driver 2
+## 2. Build & Run Livox ROS Driver 2 for 360s
 
-### 2.1 Clone Livox ROS Driver 2 source code:
+### 2.1 Clone Livox ROS Driver 2  360s source code:
+
 
 ```shell
-git clone https://github.com/Livox-SDK/livox_ros_driver2_360s.git ws_livox/src/livox_ros_driver2_360s
+mkdir -p catkin_ws/src && cd catkin_ws/src
+git clone https://github.com/DarshanJain-183/livox_ros_driver2_360s
+
 ```
 
   **Note :**
@@ -55,9 +44,13 @@ git clone https://github.com/Livox-SDK/livox_ros_driver2_360s.git ws_livox/src/l
 
 ### 2.2 Build & install the Livox-SDK2
 
-  **Note :**
 
-  Please follow the guidance of installation in the [Livox-SDK2/README.md](https://github.com/Livox-SDK/Livox-SDK2/blob/master/README.md)
+
+ 
+```shell
+cd ..
+catkin_make
+```
 
 ### 2.3 Build the Livox ROS Driver 2:
 
