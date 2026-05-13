@@ -160,7 +160,7 @@ uint8   line            # laser number in lidar
 
 LiDAR Configurations (such as ip, port, data type... etc.) can be set via a json-style config file. Config files for single HAP, Mid360, MID360S and mixed-LiDARs are in the "config" folder. The parameter naming *'user_config_path'* in launch files indicates such json file path.
 
-1. Follow is a configuration example for multi LiDAR setup- Mid360 and Mid360s (located in config/MID360s_config_multi.json):
+1. Follow is a configuration example for multi Mid360s lidar setup (located in config/MID360s_config_multi.json):
 
 ```json
 {
@@ -188,27 +188,6 @@ LiDAR Configurations (such as ip, port, data type... etc.) can be set via a json
         "log_data_port"  : 56501
       }
     ]
-  },
-  "MID360": {
-    "lidar_net_info" : {
-      "cmd_data_port": 56100,
-      "push_msg_port": 56200,
-      "point_data_port": 56300,
-      "imu_data_port": 56400,
-      "log_data_port": 56500
-    },
-    "host_net_info" : {
-      "cmd_data_ip" : "192.168.1.50",
-      "cmd_data_port": 56101,
-      "push_msg_ip": "192.168.1.50",
-      "push_msg_port": 56201,
-      "point_data_ip": "192.168.1.50",
-      "point_data_port": 56301,
-      "imu_data_ip" : "192.168.1.50",
-      "imu_data_port": 56401,
-      "log_data_ip" : "",
-      "log_data_port": 56501
-    }
   },
   "lidar_configs" : [
     {
@@ -272,60 +251,7 @@ LiDAR Configurations (such as ip, port, data type... etc.) can be set via a json
   
   ]
 }
-{
-  "lidar_summary_info" : {
-    "lidar_type": 8
-  },
-  "Mid360s": {
-    "lidar_net_info" : {
-      "cmd_data_port"  : 56100,
-      "push_msg_port"  : 56200,
-      "point_data_port": 56300,
-      "imu_data_port"  : 56400,
-      "log_data_port"  : 56500
-    },
-    "host_net_info" : [
-      {
-        "host_ip"        : "192.168.1.50",
-        "cmd_data_port"  : 56101,
-        "push_msg_port"  : 56201,
-        "point_data_port": 56301,
-        "imu_data_port"  : 56401,
-        "log_data_port"  : 56501
-      }
-    ]
-  },
-  "lidar_configs" : [
-    {
-      "ip" : "192.168.1.190",
-      "pcl_data_type" : 1,
-      "pattern_mode" : 0,
-      "frame_id" : "osx_sensor",
-      "extrinsic_parameter" : {
-        "roll": 0.0,
-        "pitch": 0.0,
-        "yaw": 0.0,
-        "x": 0,
-        "y": 0,
-        "z": 0
-      }
-    },
-    {
-      "ip" : "192.168.1.160",
-      "pcl_data_type" : 1,
-      "pattern_mode" : 0,
-      "frame_id" : "os_sensor",
-      "extrinsic_parameter" : {
-        "roll": 0.0,
-        "pitch": 0.0,
-        "yaw": 0.0,
-        "x": 0,
-        "y": 0,
-        "z": 0
-      }
-    }
-  ]
-}
+
 ```
 
 The parameter attributes in the above json file are described in the following table :
