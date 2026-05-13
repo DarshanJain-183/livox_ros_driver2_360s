@@ -177,13 +177,13 @@ LiDAR Configurations (such as ip, port, data type... etc.) can be set via a json
       "log_data_port": 59000
     },
     "host_net_info" : {
-      "cmd_data_ip" : "192.168.1.5",  # host ip (it can be revised)
+      "cmd_data_ip" : "192.168.1.50",  # host ip (it can be revised)
       "cmd_data_port": 56000,
       "push_msg_ip": "",
       "push_msg_port": 0,
-      "point_data_ip": "192.168.1.5",  # host ip
+      "point_data_ip": "192.168.1.50",  # host ip
       "point_data_port": 57000,
-      "imu_data_ip" : "192.168.1.5",  # host ip
+      "imu_data_ip" : "192.168.1.50",  # host ip
       "imu_data_port": 58000,
       "log_data_ip" : "",
       "log_data_port": 59000
@@ -218,6 +218,8 @@ The parameter attributes in the above json file are described in the following t
 | pcl_data_type             | Int | Choose the resolution of the point cloud data to send<br>1 -- Cartesian coordinate data (32 bits)<br>2 -- Cartesian coordinate data (16 bits) <br>3 --Spherical coordinate data| 1           |
 | pattern_mode                | Int     | Space scan pattern<br>0 -- non-repeating scanning pattern mode<br>1 -- repeating scanning pattern mode <br>2 -- repeating scanning pattern mode (low scanning rate) | 0               |
 | blind_spot_set (Only for HAP LiDAR)                 | Int     | Set blind spot<br>Range from 50 cm to 200 cm               | 50               |
+| frame_id                 | string     | set custimized frame id               | os_sensor               |
+
 | extrinsic_parameter |      | Set extrinsic parameter<br> The data types of "roll" "picth" "yaw" are float <br>  The data types of "x" "y" "z" are int<br>               |
 
 For more infomation about the HAP config, please refer to:
@@ -228,45 +230,46 @@ For more infomation about the HAP config, please refer to:
 ```json
 {
   "lidar_summary_info" : {
-    "lidar_type": 8  # protocol type index, please don't revise this value
+    "lidar_type": 8
+   
+
   },
-  "HAP": {
-    "lidar_net_info" : {  # HAP ports, please don't revise these values
-      "cmd_data_port": 56000,  # HAP command port
-      "push_msg_port": 0,
-      "point_data_port": 57000,
-      "imu_data_port": 58000,
-      "log_data_port": 59000
+  "Mid360s": {
+    
+    "lidar_net_info" : {
+      "cmd_data_port"  : 56100,
+      "push_msg_port"  : 56200,
+      "point_data_port": 56300,
+      "imu_data_port"  : 56400,
+      "log_data_port"  : 56500
     },
-    "host_net_info" : {
-      "cmd_data_ip" : "192.168.1.5",  # host ip
-      "cmd_data_port": 56000,
-      "push_msg_ip": "",
-      "push_msg_port": 0,
-      "point_data_ip": "192.168.1.5",  # host ip
-      "point_data_port": 57000,
-      "imu_data_ip" : "192.168.1.5",  # host ip
-      "imu_data_port": 58000,
-      "log_data_ip" : "",
-      "log_data_port": 59000
-    }
+    "host_net_info" : [
+      {
+        "host_ip"        : "192.168.1.50",
+        "cmd_data_port"  : 56101,
+        "push_msg_port"  : 56201,
+        "point_data_port": 56301,
+        "imu_data_port"  : 56401,
+        "log_data_port"  : 56501
+      }
+    ]
   },
   "MID360": {
-    "lidar_net_info" : {  # Mid360 ports, please don't revise these values
-      "cmd_data_port": 56100,  # Mid360 command port
+    "lidar_net_info" : {
+      "cmd_data_port": 56100,
       "push_msg_port": 56200,
       "point_data_port": 56300,
       "imu_data_port": 56400,
       "log_data_port": 56500
     },
     "host_net_info" : {
-      "cmd_data_ip" : "192.168.1.5",  # host ip
+      "cmd_data_ip" : "192.168.1.50",
       "cmd_data_port": 56101,
-      "push_msg_ip": "192.168.1.5",  # host ip
+      "push_msg_ip": "192.168.1.50",
       "push_msg_port": 56201,
-      "point_data_ip": "192.168.1.5",  # host ip
+      "point_data_ip": "192.168.1.50",
       "point_data_port": 56301,
-      "imu_data_ip" : "192.168.1.5",  # host ip
+      "imu_data_ip" : "192.168.1.50",
       "imu_data_port": 56401,
       "log_data_ip" : "",
       "log_data_port": 56501
@@ -274,11 +277,10 @@ For more infomation about the HAP config, please refer to:
   },
   "lidar_configs" : [
     {
-      "ip" : "192.168.1.100",  # ip of the HAP you want to config
+      "ip" : "192.168.1.190",
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
-      "blind_spot_set" : 50,
-      "frame_id" : "osx_sensor",
+      "frame_id" : "livox_frame",
       "extrinsic_parameter" : {
         "roll": 0.0,
         "pitch": 0.0,
@@ -289,9 +291,40 @@ For more infomation about the HAP config, please refer to:
       }
     },
     {
-      "ip" : "192.168.1.12",  # ip of the Mid360 you want to config
+      "ip" : "192.168.1.160",
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
+      "frame_id" : "os_sensor",
+      "extrinsic_parameter" : {
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": 0.0,
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "ip" : "192.168.1.179",
+      "pcl_data_type" : 1,
+      "pattern_mode" : 0,
+      "frame_id" : "os1_sensor",
+      "extrinsic_parameter" : {
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": 0.0,
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    
+    {
+      "ip" : "192.168.1.199",
+      "pcl_data_type" : 1,
+      "pattern_mode" : 0,
+      "frame_id" : "os2_sensor",
+      
       "extrinsic_parameter" : {
         "roll": 0.0,
         "pitch": 0.0,
@@ -301,8 +334,10 @@ For more infomation about the HAP config, please refer to:
         "z": 0
       }
     }
+  
   ]
 }
+
 ```
 3. when multiple nics on the host connect to multiple LiDARs, you need to add objects corresponding to different LiDARs to the lidar_configs array. Run different luanch files separately, and the following is an example of mixing lidar configuration file contents:
 
@@ -323,7 +358,7 @@ For more infomation about the HAP config, please refer to:
         "host_net_info": [
             {
                 "lidar_ip": ["192.168.1.100"], # Lidar ip
-                "host_ip": "192.168.1.5", # host ip
+                "host_ip": "192.168.1.50", # host ip
                 "cmd_data_port": 56101,
                 "push_msg_port": 56201,
                 "point_data_port": 56301,
@@ -337,7 +372,7 @@ For more infomation about the HAP config, please refer to:
             "ip": "192.168.1.100", # ip of the LiDAR you want to config
             "pcl_data_type": 1,
             "pattern_mode": 0,
-            "frame_id" : "osx_sensor",
+            "frame_id" : "os_sensor",
             "extrinsic_parameter": {
                 "roll": 0.0,
                 "pitch": 0.0,
@@ -494,6 +529,7 @@ For more infomation about the HAP config, please refer to:
 
 * HAP
 * Mid360
+* Mid360s
 * (more types are comming soon...)
 
 ## 6. FAQ
