@@ -194,7 +194,7 @@ LiDAR Configurations (such as ip, port, data type... etc.) can be set via a json
       "ip" : "192.168.1.190",
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
-      "frame_id" : "osx_sensor",
+      "frame_id" : "os_sensor",
       "extrinsic_parameter" : {
         "roll": 0.0,
         "pitch": 0.0,
@@ -208,7 +208,7 @@ LiDAR Configurations (such as ip, port, data type... etc.) can be set via a json
       "ip" : "192.168.1.160",
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
-      "frame_id" : "os_sensor",
+      "frame_id" : "laser_left",
       "extrinsic_parameter" : {
         "roll": 0.0,
         "pitch": 0.0,
@@ -222,7 +222,7 @@ LiDAR Configurations (such as ip, port, data type... etc.) can be set via a json
       "ip" : "192.168.1.179",
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
-      "frame_id" : "os3_sensor",
+      "frame_id" : "laser_right",
       "extrinsic_parameter" : {
         "roll": 0.0,
         "pitch": 0.0,
@@ -237,7 +237,7 @@ LiDAR Configurations (such as ip, port, data type... etc.) can be set via a json
       "ip" : "192.168.1.199",
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
-      "frame_id" : "osss_sensor",
+      "frame_id" : "laser_top",
       
       "extrinsic_parameter" : {
         "roll": 0.0,
@@ -352,7 +352,7 @@ For more infomation about the HAP config, please refer to:
       "ip" : "192.168.1.179",
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
-      "frame_id" : "os1_sensor",
+      "frame_id" : "laser_right",
       "extrinsic_parameter" : {
         "roll": 0.0,
         "pitch": 0.0,
@@ -367,7 +367,7 @@ For more infomation about the HAP config, please refer to:
       "ip" : "192.168.1.199",
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
-      "frame_id" : "os2_sensor",
+      "frame_id" : "laser_top",
       
       "extrinsic_parameter" : {
         "roll": 0.0,
