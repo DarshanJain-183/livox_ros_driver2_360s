@@ -43,40 +43,18 @@ git clone https://github.com/DarshanJain-183/livox_ros_driver2_360s
   Be sure to clone the source code in a '[work_space]/src/' folder (as shown above), otherwise compilation errors will occur due to the compilation tool restriction.
 
 ### 2.2 Build & install the Livox-SDK2
+ **Note :**
 
+  Please follow the guidance of installation in the [Livox-SDK2/README.md](https://github.com/Livox-SDK/Livox-SDK2/blob/master/README.md)
 
 
  
-```shell
-cd ..
-catkin_make
-```
-
 ### 2.3 Build the Livox ROS Driver 2:
 
 #### For ROS (take Noetic as an example):
 ```shell
-source /opt/ros/noetic/setup.sh
-./build.sh ROS1
-```
-
-#### For ROS2 Foxy:
-```shell
-source /opt/ros/foxy/setup.sh
-./build.sh ROS2
-```
-
-#### For ROS2 Humble:
-```shell
-source /opt/ros/humble/setup.sh
-./build.sh humble
-```
-
-#### For ROS2 Jazzy:
-
-```shell
-source /opt/ros/jazzy/setup.sh
-./build.sh jazzy
+cd ..
+catkin_make
 ```
 
 ### 2.4 Run Livox ROS Driver 2:
@@ -84,7 +62,7 @@ source /opt/ros/jazzy/setup.sh
 #### For ROS:
 
 ```shell
-source ../../devel/setup.sh
+source devel/setup.sh
 roslaunch livox_ros_driver2_360s [launch file]
 ```
 
@@ -99,27 +77,16 @@ An rviz launch example for HAP LiDAR would be:
 roslaunch livox_ros_driver2_360s rviz_HAP.launch
 ```
 
-#### For ROS2:
-```shell
-source ../../install/setup.sh
-ros2 launch livox_ros_driver2_360s [launch file]
-```
 
-in which,  
 
-* **[launch file]** : is the ROS2 launch file you want to use; the 'launch_ROS2' folder contains several launch samples for your reference.
 
-A rviz launch example for HAP LiDAR would be:
 
-```shell
-ros2 launch livox_ros_driver2_360s rviz_HAP_launch.py
-```
 
 ## 3. Launch file and livox_ros_driver2_360s internal parameter configuration instructions
 
 ### 3.1 Launch file configuration instructions
 
-Launch files of ROS are in the "ws_livox/src/livox_ros_driver2_360s/launch_ROS1" directory and launch files of ROS2 are in the "ws_livox/src/livox_ros_driver2_360s/launch_ROS2" directory. Different launch files have different configuration parameter values and are used in different scenarios:
+Launch files of ROS are in the "livox_ros_driver2_360s/launch_ROS1" directory, Different launch files have different configuration parameter values and are used in different scenarios:
 
 | launch file name          | Description                                                  |
 | ------------------------- | ------------------------------------------------------------ |
@@ -127,8 +94,8 @@ Launch files of ROS are in the "ws_livox/src/livox_ros_driver2_360s/launch_ROS1"
 | msg_HAP.launch     | Connect to HAP LiDAR device<br>Publish livox customized pointcloud data|
 | rviz_MID360.launch        | Connect to MID360 LiDAR device<br>Publish pointcloud2 format data <br>Autoload rviz|
 | msg_MID360.launch          | Connect to MID360 LiDAR device<br>Publish livox customized pointcloud data |
-| rviz_mixed.launch    | Connect to HAP and MID360 LiDAR device<br>Publish pointcloud2 format data <br>Autoload rviz|
-| msg_mixed.launch      | Connect to HAP and MID360 LiDAR device<br>Publish livox customized pointcloud data |
+| rviz_mixed.launch    | Connect to MID360s and MID360 LiDAR device<br>Publish pointcloud2 format data <br>Autoload rviz|
+| msg_mixed.launch      | Connect to MID360s and MID360 LiDAR device<br>Publish livox customized pointcloud data |
 
 ### 3.2 Livox ros driver 2 internal main parameter configuration instructions
 
