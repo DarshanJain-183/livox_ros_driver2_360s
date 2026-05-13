@@ -160,7 +160,7 @@ uint8   line            # laser number in lidar
 
 LiDAR Configurations (such as ip, port, data type... etc.) can be set via a json-style config file. Config files for single HAP, Mid360, MID360S and mixed-LiDARs are in the "config" folder. The parameter naming *'user_config_path'* in launch files indicates such json file path.
 
-1. Follow is a configuration example for HAP LiDAR (located in config/HAP_config.json):
+1. Follow is a configuration example for multi LiDAR setup- Mid360 and Mid360s (located in config/MID360s_config_multi.json):
 
 ```json
 {
