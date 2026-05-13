@@ -44,6 +44,7 @@ git clone https://github.com/DarshanJain-183/livox_ros_driver2_360s
 
 ### 2.2 Build & install the Livox-SDK2
  **Note :**
+ (SDK- version v1.3.1, Commit f5d9375)
 
   Please follow the guidance of installation in the [Livox-SDK2/README.md](https://github.com/Livox-SDK/Livox-SDK2/blob/master/README.md)
 
